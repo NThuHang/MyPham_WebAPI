@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MyPham_WebAPP.Models.LoaiSP>
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    Danh Sách Loại Sản Phẩm
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Loại Sản Phẩm
+            </header>
+            <div class="panel-body">
+                <div class="btn-group">
+                    <a href="@Url.Action("Create","LoaiSPs")">
+                        <button class="btn green">
+                            Thêm Mới <i class="fa fa-plus"></i>
+                        </button>
+                    </a>
+                </div>
+                <div class="adv-table">
+                    <table class="table-hover table table-bordered table-striped table-condensed" id="dynamic-table">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th width="400px">Tên Loại Sản Phẩm </th>
+                                <th>Danh Mục Cha </th>
+                                <th>Mô Tả</th>
+                                <th width="200px">Thao Tác </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID_Loai</td>
+                                    <td>@item.Ten_Loai</td>
+                                    <td>@item.ID_Cha</td>
+                                    <td>@item.MoTa</td>
+                                    <td style="text-align:center">
+                                        <a class="btn btn-xs btn-success delete-link" href="@Url.Action("Details", new { id = item.ID_Loai })">
+                                            <i class="fa fa-eye"></i> Xem
+                                        </a>
+                                        <a class="btn btn-xs btn-info" href="@Url.Action("Edit", new { id = item.ID_Loai })">
+                                            <i class="fa fa-pencil"></i> Sửa
+                                        </a>
+                                        <a class="btn btn-xs btn-danger delete-link " data-toggle="modal" href="@Url.Action("Delete", new { id = item.ID_Loai })">
+                                            <i class="fa fa-trash-o"></i> Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+

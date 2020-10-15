@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MyPham_WebAPP.Models.LoaiSP>
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal fade modal-dialog-center top-modal-with-space" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Xóa Danh Mục Sản Phẩm</h4>
+                </div>
+                <div class="modal-body">
+
+                    Bạn Có Chắn Muốn Xóa Loại Sản Phẩm Này Không ?
+
+                </div>
+                <div class="modal-footer">
+                    @using (Html.BeginForm("Delete", "LoaiSPs", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="submit" value=" Xóa " class="btn btn-danger" />
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

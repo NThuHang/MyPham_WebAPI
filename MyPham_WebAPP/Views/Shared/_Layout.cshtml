@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @ViewBag.Title </title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/lib/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!--dynamic table-->
+    <link href="~/lib/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="~/lib/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/assets/data-tables/DT_bootstrap.css" />
+    <!--right slidebar-->
+    <link href="~/lib/css/slidebars.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/lib/css/style.css" rel="stylesheet">
+    <link href="~/lib/css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/lib/assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+    <link href="~/lib/assets/summernote/dist/summernote.css" rel="stylesheet">
+
+</head>
+<body class=" body-content">
+    <section id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="@Url.Action("Index","Home")" class="logo">LacLac<span>Shop</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge bg-success">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green">Bạn có 5 nhiệm vụ</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Bài Viết</div>
+                                        <div class="percent">40%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Hoàn Thành</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Sản Phẩm</div>
+                                        <div class="percent">60%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Hoàn Thành</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Giao Diện Người Dùng</div>
+                                        <div class="percent">87%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
+                                            <span class="sr-only">87% Hoàn Thành</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Xử Lý Đơn Hàng</div>
+                                        <div class="percent">33%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+                                            <span class="sr-only">33% Hoàn Thành</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="#">Xem Thêm</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-important">8</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-red"></div>
+                            <li>
+                                <p class="red">Bạn có 8 tin nhắn mới</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/lib/img/avatar-mini.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Ngọc Nguyễn</span>
+                                        <span class="time">Bây giờ</span>
+                                    </span>
+                                    <span class="message">
+                                        Shop cho e hỏi sản phẩm ...
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/lib/img/avatar-mini2.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Hoa Phạm</span>
+                                        <span class="time">10 phút</span>
+                                    </span>
+                                    <span class="message">
+                                        Em nhận được sản phẩm rồi ...
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/lib/img/avatar-mini3.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Chiến Thắng</span>
+                                        <span class="time">13 phút</span>
+                                    </span>
+                                    <span class="message">
+                                        Cảm ơn shop nhiều ạ !!!
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="~/lib/img/avatar-mini4.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Hương Mai</span>
+                                        <span class="time">20 phút</span>
+                                    </span>
+                                    <span class="message">
+                                        Sản phẩm này còn không ...
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Xem Thêm</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">Bạn có 10 thông báo mới</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    3 Đơn hàng thành công.  <span class="small italic">34 phút</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="fa fa-bell"></i></span>
+                                    Bạn có 3 bình luận mới.
+                                    <span class="small italic">23 phút</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    6 Đơn hàng cần mới xử lý.
+                                    <span class="small italic">40 phút</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="fa fa-plus"></i></span>
+                                    5 Người dùng đăng ký mới.
+                                    <span class="small italic">1 giờ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-info"><i class="fa fa-bullhorn"></i></span>
+                                    Doanh số tăng lên 3%.
+                                    <span class="small italic">3 giờ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Xem Thêm</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- notification dropdown end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="~/lib/img/avatar1_small.jpg">
+                            <span class="username">Admin</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" fa fa-suitcase"></i>Thông Tin</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
+                            <li><a href=""><i class="fa fa-external-link"></i> Website</a></li>
+                            <li><a href="@Url.Action("Logout","Login")"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                    <li class="sb-toggle-right">
+                        <i class="fa  fa-align-right"></i>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        @RenderPage("_sidebar.cshtml")
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Home") "><i class="fa fa-home"></i> Trang Chủ</a></li>
+                            <li><a href="#">@RenderSection("header", required: true)</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                @if (TempData["AlertMessage"] != null)
+                {
+                    <div id="AlertBox" class="alert alert-block fade in @TempData["AlertType"]">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        @TempData["AlertMessage"]
+                    </div>
+                }
+
+                @RenderBody()
+            </section>
+            <!-- Right Slidebar start -->
+            <div class="sb-slidebar sb-right sb-style-overlay">
+                <h5 class="side-title">Khách hàng trực tuyến</h5>
+                <ul class="quick-chat-list">
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="~/lib/img/chat-avatar2.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <strong>Trung Hiếu</strong>
+                                <small>Sản phẩm thật tuyệt vời!</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="~/lib/img/chat-avatar.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-important">3</span>
+                                </div>
+                                <strong>Ngọc Quang</strong>
+                                <small>Sản phẩm nào sẽ tốt cho da dầu vậy shop?</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="~/lib/img/pro-ac-1.png" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-success">5</span>
+                                </div>
+                                <strong>Minh Hậu </strong>
+                                <small>Cho tôi thêm thông tin về nó với ạ?</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="~/lib/img/avatar1.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <strong>Phương Lan</strong>
+                                <small>Cảm ơn bạn.</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="~/lib/img/mail-avatar.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-warning">7</span>
+                                </div>
+                                <strong>Kiên Nguyễn</strong>
+                                <small>Em check lại đơn giúp mình nhé!</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                </ul>
+                <h5 class="side-title"> Nhiệm vụ đang chờ</h5>
+                <ul class="p-task tasks-bar">
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Bài Viết</div>
+                                <div class="percent">40%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
+                                    <span class="sr-only">40% Hoàn Thành</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Sản Phẩm</div>
+                                <div class="percent">60%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">
+                                    <span class="sr-only">60% Hoàn Thành</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Giao Diện Người Dùng</div>
+                                <div class="percent">87%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 87%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
+                                    <span class="sr-only">87% Hoàn Thành</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Xử Lý Đơn Hàng</div>
+                                <div class="percent">33%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-danger">
+                                    <span class="sr-only">33% Hoàn Thành</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Biểu đồ doanh số tháng 4</div>
+                                <div class="percent">45%</div>
+                            </div>
+                            <div class="progress progress-striped active">
+                                <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar">
+                                    <span class="sr-only">45% Hoàn Thành</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="external">
+                        <a href="#">Xem Tất Cả</a>
+                    </li>
+                </ul>
+            </div>
+            <footer class="site-footer">
+                <div class="text-center">
+                    2019 &copy; LacLacShop by Nguyễn Thu Hằng.
+                    <a href="#" class="go-top">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+            </footer>
+        </section>
+        <script src="~/lib/js/jquery.js"></script>
+        <script src="~/lib/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="~/lib/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="~/lib/js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="~/lib/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="~/lib/js/jquery.scrollTo.min.js"></script>
+        <script src="~/lib/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script type="text/javascript" language="javascript" src="~/lib/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="~/lib/assets/data-tables/DT_bootstrap.js"></script>
+        <script src="~/lib/js/respond.min.js"></script>
+        <script src="~/lib/js/slidebars.min.js"></script>
+        <script src="~/lib/js/dynamic_table_init.js"></script>
+        <script type="text/javascript" src="~/lib/js/jquery.validate.min.js"></script>
+        <script src="~/lib/js/form-validation-script.js"></script>
+        <script src="~/lib/js/advanced-form-components.js"></script>
+        <script type="text/javascript" src="~/lib/assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+        <script src="~/lib/assets/summernote/dist/summernote.min.js"></script>
+        <!--this page datetime-->
+        <script type="text/javascript" src="~/lib/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script src="~/lib/js/advanced-form-components.js"></script>
+        <script src="~/lib/js/common-scripts.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+
+                $('.summernote').summernote({
+                    height: 200,
+                    minHeight: null,
+                    maxHeight: null,
+                    focus: false
+                });
+            });
+        </script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/Scripts/Admin/function.js"></script>
+    </section>
+</body>
+</html>

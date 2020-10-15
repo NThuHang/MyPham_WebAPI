@@ -1,0 +1,81 @@
+﻿<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")" href="@Url.Action("Index","Home")">
+                    <i class="fa fa-home"></i>
+                    <span style="color: black; background-color:white">Trang Chủ</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a class="@(ViewBag.Title == "Sản Phẩm" ? "active" : "")" href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Sản Phẩm</span>
+                </a>
+                <ul class="sub">
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "SanPhams" ? "active" : "")">
+                        <a href="@Url.Action("Index","SanPhams") ">Danh Sách Sản Phẩm</a>
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "LoaiSPs" ? "active" : "")">
+                        <a href="@Url.Action("Index","LoaiSPs") " style="color: black; background-color:white">Loại Sản Phẩm</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a class="@(ViewBag.Title == "Thống Kê" ? "active" : "")" href="javascript:;">
+                    <i class="fa  fa-archive"></i>
+                    <span>Thống Kê<span>
+                </a>
+                <ul class="sub">
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")">
+                        <a href="@Url.Action("Index","Product") ">Sản Phẩm</a>
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "ProList" ? "active" : "")">
+                        <a href="@Url.Action("Index","ProList") ">Hóa Đơn</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" class="@(ViewBag.Title == "Nhân Viên" ? "active" : "")">
+                    <i class="fa fa-users"></i>
+                    <span> Nhân Viên </span>
+                </a>
+                <ul class="sub">
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "User" ? "active" : "")">
+                        <a href="@Url.Action("Index","User") ">Danh Sách Nhân Viên</a>
+                    </li>
+                    @*<li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Permission" ? "active" : "")">
+                        <a href="@Url.Action("Index","Brand") ">Phân Quyền</a>
+                    </li>*@
+                </ul>
+            </li>
+            @*<li>
+                <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Customer" ? "active" : "")" href="@Url.Action("Index","Customer")">
+                    <i class=" fa fa-bar-chart-o"></i>
+                    <span>Khách hàng</span>
+                </a>
+            </li>*@
+            @*<li class="sub-menu">
+                <a href="javascript:;" class="@(ViewBag.Title == "Thống Kê" ? "active" : "")">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Thống Kê</span>
+                </a>
+                <ul class="sub">
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Order" ? "active" : "")">
+                        <a href="@Url.Action("Statistic","Order")">Đơn Hàng</a>
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")">
+                        <a href="@Url.Action("Statistic","Product")">Sản Phẩm</a>
+                    </li>
+                </ul>
+            </li>*@
+            <li>
+                <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Acount" ? "active" : "")" href="@Url.Action("View","User")">
+                    <i class="fa fa-user"></i>
+                    <span>Tài Khoản</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

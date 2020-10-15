@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MyPham_WebAPP.Models.SanPham>
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    Danh Sách Sản Phẩm 
+}
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Sản Phẩm
+            </header>
+            <div class="panel-body">
+                <div class="btn-group">
+                    <a href="@Url.Action("Index","LoaiSPs")">
+                        <button class="btn green">
+                            Quay Lại <i class="fa fa-plus"></i>
+                        </button>
+                    </a>
+                </div>
+                <div class="adv-table">
+                    <table class="table-hover table table-bordered table-striped table-condensed" id="dynamic-table">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Hình Ảnh</th>
+                                <th width="500px">Tên Sản Phẩm</th>
+                                <th>Loại Sản Phẩm</th>
+                                <th>Số Lượng</th>
+                                <th>Thương Hiệu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID_SP</td>
+                                    <td>
+                                        <img src="@Url.Content("~/img/" +item.HinhAnh) " style="width: 50px; height: 50px">
+                                    </td>
+                                    <td>@item.Ten_SP</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ID_Loai)</td>
+                                    <td>@item.So_Luong</td>
+                                    <td> @(item.ThuongHieu)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
